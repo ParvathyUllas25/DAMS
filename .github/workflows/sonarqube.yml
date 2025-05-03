@@ -1,4 +1,4 @@
-name: Run SonarCloud Scan
+name: Run SonarQube Scan
 
 on:
   workflow_call:
@@ -6,7 +6,6 @@ on:
 jobs:
   sonarqube:
     runs-on: ubuntu-latest
-
     steps:
     - uses: actions/checkout@v4
       with:
@@ -15,10 +14,8 @@ jobs:
     - name: Download Artifacts
       uses: actions/download-artifact@v4
 
-    - name: Run SonarCloud Scan
-      uses: SonarSource/sonarcloud-github-action@v2
-      with:
-        projectKey: ParvathyUllas25
-        organization: parvathyullas25
+    - name: SonarQube Scan
+      uses: SonarSource/sonarqube-scan-action@v5
       env:
-        SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+        SONAR_TOKEN: 69bbe6b406c8ede02fd4fa004cb8b292c169486a
+        
