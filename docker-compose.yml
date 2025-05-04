@@ -1,5 +1,3 @@
-
-
 networks:
   dams-internal-network:
     driver: bridge
@@ -31,10 +29,10 @@ services:
       - dams-internal-network
 
   dams-server:
-    build:
-      context: ./server
-      dockerfile: Dockerfile
-    # image: ghcr.io/parvathyullas25/dams/server:main
+    # build:
+    #   context: ./server
+    #   dockerfile: Dockerfile
+    image: ghcr.io/parvathyullas25/dams/server:main
     container_name: dams-server
     restart: always
     healthcheck:
