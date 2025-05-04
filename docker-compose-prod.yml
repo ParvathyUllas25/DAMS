@@ -31,7 +31,7 @@ services:
       - dams-internal-network
 
   dams-server:
-    image: ghcr.io/thara-ttt/disaster_assistance_managment/server:main
+    image: ghcr.io/parvathyullas25/dams/server:main
     container_name: dams-server
     restart: always
     healthcheck:
@@ -59,7 +59,7 @@ services:
       - dams-external-network
 
   dams-client:
-    image: ghcr.io/thara-ttt/disaster_assistance_managment/client:main
+    image: ghcr.io/parvathyullas25/dams/client:main
     container_name: dams-client
     restart: always
     healthcheck:
